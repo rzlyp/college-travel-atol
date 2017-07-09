@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+body {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background-color: #FFFFFF;
+    color: #212121;
+    font-family: roboto, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 400;
+}
+
+.wrapper {
+    height: 100%;
+}
+
+.sidebar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 260px;
+    display: block;
+    z-index: 1;
+    color: #FFFFFF;
+    background: #333A4D;
+}
+
+.sidebar .logo {
+    padding: 12px;
+    border-bottom: 4px solid #2B3141;
+}
+
+.sidebar .nav li a {
+    color: #FFFFFF;
+    padding: 16px;
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom: 4px solid #2B3141;
+}
+
+.sidebar .nav li a:hover {
+    color: #73F0D8;
+    background-color: #333A4D;
+}
+
+.sidebar .nav li a:focus {
+    color: #73F0D8;
+    background-color: #333A4D;
+}
+
+.sidebar .nav li a:active {
+    color: #73F0D8;
+    background-color: #333A4D;
+}
+
+.sidebar .nav li a:visited {
+    background-color: #333A4D;
+    border-bottom: 4px solid #2B3141;
+}
+
+.sidebar .nav .dropdown-menu {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 18px;
+    padding-left: 12px;
+    border-radius: 0;
+    border-bottom: 4px solid #2B3141;
+    border-top: none;
+    background-color: #333A4D;
+    box-shadow: none;
+}
+
+.sidebar .nav .dropdown-menu li a {
+    border: none;
+}
+
+.navbar-extended {
+    display: none;
+}
+
+.navbar-default {
+    border-bottom: none;
+    background-color: #FFFFFF;
+    box-shadow: 1px 1px 8px #BDBDBD;
+}
+
+.main-panel {
+    background: #E9E9E9;
+    z-index: 2;
+    float: right;
+    width: calc(100% - 260px);
+    min-height: 100%;
+}
+
+.header {
+    padding-bottom: 24px;
+}
+
+.content {
+    padding: 24px 0px; 
+    background: #FFFFFF;
+}
+
+.sidebar,
+.main-panel {
+    max-height: 100%;
+    height: 100%;
+}
+
+@media (max-width: 861px) {
+    .sidebar {
+        display: none;
+    }
+    .navbar-extended {
+        display: block;
+    }
+    .main-panel {
+        width: 100%;
+    }
+    body {
+        position: relative;
+    }
+}
+
+.title {
+    color: #757575;
+    font-weight: 700;
+}
