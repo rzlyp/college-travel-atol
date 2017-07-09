@@ -31,3 +31,18 @@ Route::get('/admin/transaksi', function () {
     return view('admin/transaksi');
 });
 
+Route::get('/petugas', function () {
+    return view('petugas/tiket');
+});
+
+Route::get('/petugas/kendaraan', function () {
+    return view('petugas/kendaraan');
+});
+
+Route::get('/petugas/tujuan', function () {
+    return view('petugas/tujuan');
+});
+
+Route::get('/petugas/transaksi', function () {
+    return view('petugas/transaksi');
+});

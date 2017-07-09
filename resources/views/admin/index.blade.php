@@ -47,7 +47,7 @@
             <div class="col-md-12">
                 <h3 class="title">Data Transaksi</h3>
                 <div class="table-responsive">
-                    <table class="table table-bordered table-responsive">
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -69,7 +69,7 @@
                                 <td>1</td>
                                 <td>23/06/2017</td>
                                 <td>16:00 PM</td>
-                                <td>150 Ribu</td>
+                                <td>Rp. 150000</td>
                             </tr>
                             <tr>
                                 <td>999</td>
@@ -79,7 +79,7 @@
                                 <td>1</td>
                                 <td>23/06/2017</td>
                                 <td>16:00 PM</td>
-                                <td>150 Ribu</td>
+                                <td>Rp. 150000</td>
                             </tr>
                             <tr>
                                 <td>999</td>
@@ -89,7 +89,7 @@
                                 <td>1</td>
                                 <td>23/06/2017</td>
                                 <td>16:00 PM</td>
-                                <td>150 Ribu</td>
+                                <td>Rp. 150000</td>
                             </tr>
                             <tr>
                                 <td>999</td>
@@ -99,7 +99,7 @@
                                 <td>1</td>
                                 <td>23/06/2017</td>
                                 <td>16:00 PM</td>
-                                <td>150 Ribu</td>
+                                <td>Rp. 150000</td>
                             </tr>
                             <tr>
                                 <td>999</td>
@@ -109,7 +109,7 @@
                                 <td>1</td>
                                 <td>23/06/2017</td>
                                 <td>16:00 PM</td>
-                                <td>150 Ribu</td>
+                                <td>Rp. 150000</td>
                             </tr>
                         </tbody>
                     </table>
@@ -119,7 +119,7 @@
             <div class="col-md-12">
                 <h3 class="title">Data Petugas</h3>
                 <div class="table-responsive">
-                    <table class="table table-bordered table-responsive">
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -173,7 +173,7 @@
             <div class="col-md-12">
                 <h3 class="title">Data Kendaraan</h3>
                 <div class="table-responsive">
-                    <table class="table table-bordered table-responsive">
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>ID</th>

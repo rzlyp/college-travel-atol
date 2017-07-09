@@ -8,9 +8,9 @@
     <title>TRAVELKITA</title>
 
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/dataTables.bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
-    <link href="{{asset('css/dataTables.bootstrap.min.css')}}" rel="stylesheet">
 </head>
 
 <body>

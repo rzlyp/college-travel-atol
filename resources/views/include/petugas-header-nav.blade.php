@@ -12,22 +12,32 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-extended">
                 <li>
-                    <a href="{{url('/admin')}}">
-                        Dashboard
+                    <a href="{{url('/petugas')}}">
+                        Pembelian Tiket
                     </a>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Data Petugas
+                        Data Kendaraan
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="{{url('/admin/petugas/add')}}">Tambah Petugas</a></li>
-                        <li><a href="{{url('/admin/petugas')}}">Kelola Petugas</a></li>
+                        <li><a href="{{url('/petugas/kendaraan/add')}}">Tambah Kendaraan</a></li>
+                        <li><a href="{{url('/petugas/kendaraan')}}">Kelola Kendaraan</a></li>
+                    </ul>
+                </li>        
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Data Tujuan
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="{{url('/petugas/tujuan/add')}}">Tambah Tujuan</a></li>
+                        <li><a href="{{url('/petugas/tujuan')}}">Kelola Tujuan</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="{{url('/admin/transaksi')}}">
+                    <a href="{{url('/petugas/transaksi')}}">
                         Data Transaksi
                     </a>
                 </li>

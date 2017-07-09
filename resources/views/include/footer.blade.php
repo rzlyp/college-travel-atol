@@ -10,6 +10,12 @@
         $(document).ready(function () {
                 $('#table-petugas').DataTable();
         });
+        $(document).ready(function () {
+                $('#table-kendaraan').DataTable();
+        });
+        $(document).ready(function () {
+                $('#table-tujuan').DataTable();
+        });
 </script>
 </body>
 
