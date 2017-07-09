@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-6 cover">
             <div class="container container-left">
-                <img class="img img-responsive" src="{{asset('img/im-logo-2x.png')}}" alt="" />
+                <img class="img-responsive" src="{{asset('img/im-logo-2x.png')}}" alt="" />
                 <h4>
                     JASA TRAVEL PILIHAN KELUARGA
                 </h4>
