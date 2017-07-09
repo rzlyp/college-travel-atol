@@ -11,7 +11,7 @@
 
 <div class="content">
     <div class="container-fluid">
-        <div class="row">
+        <div class="row" style="padding-bottom: 36px;">
             <div class="col-md-4"></div>
             <div class="col-md-4">
                 <center>

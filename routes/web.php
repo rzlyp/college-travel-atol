@@ -39,8 +39,16 @@ Route::get('/petugas/kendaraan', function () {
     return view('petugas/kendaraan');
 });
 
+Route::get('/petugas/kendaraan/add', function () {
+    return view('petugas/kendaraan-add');
+});
+
 Route::get('/petugas/tujuan', function () {
     return view('petugas/tujuan');
+});
+
+Route::get('/petugas/tujuan/add', function () {
+    return view('petugas/tujuan-add');
 });
 
 Route::get('/petugas/transaksi', function () {
