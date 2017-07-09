@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background-color: #FFFFFF;
+    color: #212121;
+    font-family: roboto, sans-serif;
+}
+
+.btn-primary {
+    height: 40px;
+    background-color: #0975E1;
+    border: none;
+    box-shadow: 1px 1px 8px #BDBDBD;
+    border-radius: 0px;
+    font-weight: 700;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 36px;
+}
+
+input {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    padding: 8px 0px 8px 0px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #757575;
+}
+
+input:focus {
+    outline: none;
+}
+
+label {
+    color: #757575;
+    font-size: 18px;
+    font-weight: 300;
+    position: absolute;
+    pointer-events: none;
+    left: 0px;
+    top: 8px;
+    transition: 0.2s ease all;
+}
+
+input:focus~label,
+input:valid~label {
+    top: -20px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #0975E1;
+}
+
+.bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.bar:before,
+.bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: .5px;
+    position: absolute;
+    background: #0975E1;
+    transition: 0.2s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+input:focus~.bar:before,
+input:focus~.bar:after {
+    width: 50%;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+}
+
+.row {
+    height: 100%;
+}
+
+.col-md-6 {
+    padding: 0px;
+}
+
+.cover {
+    height: 100%;
+    min-height: 350px;
+    background: url("../img/im-car.png") no-repeat scroll;
+    background-size: 100% auto;
+}
+
+.container-left {
+    height: 100%;
+    padding: 40px 24px;
+}
+
+.container-left h4 {
+    padding: 0dp;
+    margin: 0dp;
+    color: #FFFFFF;
+    letter-spacing: 4px;
+    font-weight: 400;
+}
+
+.container-right {
+    height: 100%;
+    padding: 96px 96px 0px;
+}
+
+.container-right h1 {
+    font-weight: 700;
+    color: #212121;
+}
+
+.container-right h5 {
+    color: #757575;
+}
+
+.footer {
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    font-size: 12px;
+    width: 150%;
+    text-align: center;
+    color: #757575;
+}
+
+@media (max-width: 991px) {
+    .footer {
+        position: relative;
+        width: 100%;
+        margin-top: 48px;
+    }
+}
