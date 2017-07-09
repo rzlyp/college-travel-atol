@@ -19,3 +19,15 @@ Route::get('/admin', function () {
     return view('admin/index');
 });
 
+Route::get('/admin/petugas', function () {
+    return view('admin/petugas');
+});
+
+Route::get('/admin/petugas/add', function () {
+    return view('admin/petugas-add');
+});
+
+Route::get('/admin/transaksi', function () {
+    return view('admin/transaksi');
+});
+

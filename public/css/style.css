@@ -15,6 +15,39 @@ h4 {
     font-weight: 400;
 }
 
+.btn-primary {
+    background-color: #0975E1;
+    border: none;
+    box-shadow: 1px 1px 8px #BDBDBD;
+    border-radius: 0px;
+    font-weight: 700;
+}
+
+.btn-danger {
+    background-color: #E21368;
+    border: none;
+    box-shadow: 1px 1px 8px #BDBDBD;
+    border-radius: 0px;
+    font-weight: 700;
+}
+
+.btn-default {
+    background-color: #464646;
+    color: #FFFFFF;
+    border: none;
+    box-shadow: 1px 1px 8px #BDBDBD;
+    border-radius: 0px;
+    font-weight: 700;
+}
+
+.button-icon {
+    padding: 0px 8px 0px 0px;
+}
+
+.center {
+    margin: 0 auto;
+}
+
 .wrapper {
     height: 100vh;
 }
@@ -46,13 +79,17 @@ h4 {
     border-bottom: 4px solid #2B3141;
 }
 
+.sidebar .nav li a:link {
+    background-color: #333A4D;
+    border-bottom: 4px solid #2B3141;
+}
+
 .sidebar .nav li a:hover {
     color: #73F0D8;
     background-color: #333A4D;
 }
 
 .sidebar .nav li a:focus {
-    color: #73F0D8;
     background-color: #333A4D;
 }
 
