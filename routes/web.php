@@ -14,9 +14,7 @@
 Route::get('/', 'Auth\LoginController@getLogin');
 Route::post('/','Auth\LoginController@postLogin');
 Route::group(['prefix' => 'admin','middleware' => 'web'], function () {
-	Route::get('/', function () {
-	    return view('admin/index');
-	});
+	Route::get('/', 'AdminController@dashboard');
 
 	Route::get('/petugas', 'UsersController@getPetugas');
 

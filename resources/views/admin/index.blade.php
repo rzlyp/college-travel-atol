@@ -19,7 +19,7 @@
                             <i class="icon fa fa-users fa-3x"></i>
                             <div class="content">
                                 <h4>Petugas</h4>
-                                <p>5</p>
+                                <p>{{count($petugas)}}</p>
                             </div>
                         </div>
                     </div>
@@ -28,7 +28,7 @@
                             <i class="icon fa fa-car fa-3x"></i>
                             <div class="content">
                                 <h4>Kendaraan</h4>
-                                <p>5</p>
+                                <p>{{count($kendaraan)}}</p>
                             </div>
                         </div>
                     </div>
@@ -130,41 +130,17 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($petugas as $data)
                             <tr>
-                                <td>999</td>
-                                <td>Rizal Yogi P</td>
-                                <td>rzlyp</td>
-                                <td>Petugas</td>
-                                <td><img class="img-responsive" src="{{asset('img/im-photo-placeholder.png')}}" width="56px" /></td>
+                                <td>{{$data->id}}</td>
+                                <td>{{$data->nama}}</td>
+                                <td>{{$data->username}}</td>
+                                <td>{{$data->role}}</td>
+                                <td><img class="img-responsive" src="{{asset('img/im-photo-placeholder.png')}}" width="56px"/></td>
+                                
+                               
                             </tr>
-                            <tr>
-                                <td>999</td>
-                                <td>Rizal Yogi P</td>
-                                <td>rzlyp</td>
-                                <td>Petugas</td>
-                                <td><img class="img-responsive" src="{{asset('img/im-photo-placeholder.png')}}" width="56px" /></td>
-                            </tr>
-                            <tr>
-                                <td>999</td>
-                                <td>Rizal Yogi P</td>
-                                <td>rzlyp</td>
-                                <td>Petugas</td>
-                                <td><img class="img-responsive" src="{{asset('img/im-photo-placeholder.png')}}" width="56px" /></td>
-                            </tr>
-                            <tr>
-                                <td>999</td>
-                                <td>Rizal Yogi P</td>
-                                <td>rzlyp</td>
-                                <td>Petugas</td>
-                                <td><img class="img-responsive" src="{{asset('img/im-photo-placeholder.png')}}" width="56px" /></td>
-                            </tr>
-                            <tr>
-                                <td>999</td>
-                                <td>Rizal Yogi P</td>
-                                <td>rzlyp</td>
-                                <td>Petugas</td>
-                                <td><img class="img-responsive" src="{{asset('img/im-photo-placeholder.png')}}" width="56px" /></td>
-                            </tr>
+                         @endforeach  
                         </tbody>
                     </table>
                 </div>
@@ -182,31 +158,14 @@
                             </tr>
                         </thead>
                         <tbody>
+                             @foreach($kendaraan as $data)
                             <tr>
-                                <td>999</td>
-                                <td>Avanza</td>
-                                <td>12</td>
+                                <td>{{$data->id_kendaraan}}</td>
+                                <td>{{$data->nama_kendaraan}}</td>
+                                <td>{{$data->kapasitas_kendaraan}}</td>
+                                
                             </tr>
-                            <tr>
-                                <td>999</td>
-                                <td>Avanza</td>
-                                <td>12</td>
-                            </tr>
-                            <tr>
-                                <td>999</td>
-                                <td>Avanza</td>
-                                <td>12</td>
-                            </tr>
-                            <tr>
-                                <td>999</td>
-                                <td>Avanza</td>
-                                <td>12</td>
-                            </tr>
-                            <tr>
-                                <td>999</td>
-                                <td>Avanza</td>
-                                <td>12</td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
