@@ -17,7 +17,7 @@
                 <form method="post" style="margin-top: 24px">
                     <div class="form-group">
                         <label>Nama Kendaraan</label>
-                        <input type="text" class="form-control" name="nama" />
+                        <input type="text" class="form-control" name="nama" required/>
                     </div>
                     <div class="form-group">
                         <label>Kapasitas Kendaraan</label>

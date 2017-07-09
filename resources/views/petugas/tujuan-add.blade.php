@@ -17,11 +17,11 @@
                 <form method="post" style="margin-top: 24px">
                     <div class="form-group">
                         <label>Kode Tujuan</label>
-                        <input type="text" class="form-control" name="kode" />
+                        <input type="text" class="form-control" name="kode" required/>
                     </div>
                     <div class="form-group">
                         <label>Nama Tujuan</label>
-                        <input type="text" class="form-control" name="nama" />
+                        <input type="text" class="form-control" name="nama" required/>
                     </div>
                     <div class="form-group">
                         <label>Nama Kendaraan</label>
@@ -31,7 +31,7 @@
                     </div>                    
                     <div class="form-group">
                         <label>Tarif</label>
-                        <input type="number" class="form-control" name="tarif" />
+                        <input type="number" class="form-control" name="tarif" required/>
                     </div>
                     <input type="submit" class="btn btn-primary form-control" value="Submit"/>
                 </form>

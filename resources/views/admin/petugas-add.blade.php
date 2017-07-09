@@ -22,15 +22,15 @@
                 <form method="post" style="margin-top: 24px">
                     <div class="form-group">
                         <label>Username</label>
-                        <input type="text" class="form-control" name="username" />
+                        <input type="text" class="form-control" name="username" required/>
                     </div>
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="password" class="form-control" name="password" />
+                        <input type="password" class="form-control" name="password" required/>
                     </div>
                     <div class="form-group">
                         <label>Nama Petugas</label>
-                        <input type="text" class="form-control" name="nama" />
+                        <input type="text" class="form-control" name="nama" required/>
                     </div>
                     <div class="form-group">
                         <label>Role Petugas</label>
