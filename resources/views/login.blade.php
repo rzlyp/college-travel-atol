@@ -20,6 +20,16 @@
                 </h5>
 
                 <form method="post" action="">
+                    @if (Session::has('failed'))
+                                                <div class="alert alert-danger">
+                                                 <em> 
+                                                   
+                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                             {!! session('failed') !!}
+                                                </em>
+                                                </div>
+                  @endif
+                  <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div class="form-group" style="margin-top: 48px;">
                         <input type="text" name="username" required/>
                         <span class="highlight"></span>

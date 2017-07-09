@@ -14,6 +14,14 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
+                @if (Session::has('success'))
+                   <div class="alert alert-success">
+                           <em> 
+                              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    {!! session('success') !!}
+                           </em>
+                    </div>
+                  @endif
                  <div class="table-responsive">
                     <table id="table-kendaraan" class="table table-bordered">
                         <thead>
@@ -25,15 +33,29 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($kendaraan as $data)
                             <tr>
-                                <td>999</td>
-                                <td>Avanza</td>
-                                <td>12</td>
+                                <td>{{$data->id_kendaraan}}</td>
+                                <td>{{$data->nama_kendaraan}}</td>
+                                <td>{{$data->kapasitas_kendaraan}}</td>
                                 <td>
-                                    <a href="{{url('/petugas/kendaraan/add')}}" class="btn btn-primary">Edit</a>
-                                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#modal-hapus">Hapus</a>
+                                    <a href="{{url('/petugas/kendaraan/update')}}/{{$data->id_kendaraan}}" class="btn btn-primary">Edit</a>
+                                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#modal-hapus{{$data->id_kendaraan}}">Hapus</a>
                                 </td>
-                                <div class="modal fade" id="modal-hapus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@stop
+
+@foreach($kendaraan as $data)
+<div class="modal fade" id="modal-hapus{{$data->id_kendaraan}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -45,7 +67,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak, Batalkan</button>
-                                                <button type="button" class="btn btn-primary">Iya, Hapus</button>
+                                                <a href="{{url('/petugas/kendaraan/delete')}}/{{$data->id_kendaraan}}" class="btn btn-primary">Iya, Hapus</a>
                                             </div>
                                         </div>
                                         <!-- /.modal-content -->
@@ -53,48 +75,4 @@
                                     <!-- /.modal-dialog -->
                                 </div>
                                 <!-- /.modal -->
-                            </tr>
-                            <tr>
-                                <td>999</td>
-                                <td>Avanza</td>
-                                <td>12</td>                                
-                                <td>
-                                    <a href="{{url('/petugas/kendaraan/add')}}" class="btn btn-primary">Edit</a>
-                                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#modal-hapus">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>999</td>
-                                <td>Avanza</td>
-                                <td>12</td>
-                                <td>
-                                    <a href="{{url('/petugas/kendaraan/add')}}" class="btn btn-primary">Edit</a>
-                                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#modal-hapus">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>999</td>
-                                <td>Avanza</td>
-                                <td>12</td>
-                                <td>
-                                    <a href="{{url('/petugas/kendaraan/add')}}" class="btn btn-primary">Edit</a>
-                                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#modal-hapus">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>999</td>
-                                <td>Avanza</td>
-                                <td>12</td>
-                                <td>
-                                    <a href="{{url('/petugas/kendaraan/add')}}" class="btn btn-primary">Edit</a>
-                                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#modal-hapus">Hapus</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@stop
+@endforeach                                

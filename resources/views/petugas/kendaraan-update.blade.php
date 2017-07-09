@@ -1,9 +1,4 @@
 @extends('petugas-dashboard') @section('content')
-
-<?php
-    $kapasitas = [12, 18, 20, 24, 30];
-?>
-
 <div class="header">
     <div class="container-fluid">
         <div class="row">
@@ -13,23 +8,29 @@
         </div>
     </div>
 </div>
-
+<?php
+    $kapasitas = [12, 18, 20, 24, 30];
+?>
 <div class="content">
     <div class="container-fluid">
         <div class="row" style="padding-bottom: 36px;">
             <div class="col-md-4"></div>
             <div class="col-md-4">
-                <form method="post" style="margin-top: 24px" action="{{url('/petugas/kendaraan/add')}}">
+                <form method="post" style="margin-top: 24px" action="{{url('/petugas/kendaraan/update')}}/{{$kendaraan->id_kendaraan}}">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div class="form-group">
                         <label>Nama Kendaraan</label>
-                        <input type="text" class="form-control" name="nama_kendaraan" required/>
+                        <input type="text" class="form-control" name="nama_kendaraan" value="{{$kendaraan->nama_kendaraan}}" required/>
                     </div>
                     <div class="form-group">
                         <label>Kapasitas Kendaraan</label>
                         <select class="form-control" name="kapasitas">
-                            @foreach($kapasitas as $data)
-                            <option value="{{$data}}">{{$data}}</option>
+                             @foreach($kapasitas as $data)
+                                @if($kendaraan === $data)
+                                    <option value="{{$data}}" selected>{{$data}}</option>
+                                @else
+                                    <option value="{{$data}}">{{$data}}</option>
+                                @endif
                             @endforeach
                         </select>
                     </div>

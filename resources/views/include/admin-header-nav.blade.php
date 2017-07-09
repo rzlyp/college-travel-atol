@@ -37,11 +37,11 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-user-circle"></i>
-                        &nbsp;Hello, Admin
+                        &nbsp;Hello, {{Auth::user()->nama}}
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Log Out</a></li>
+                        <li><a href="{{url('/logout')}}">Log Out</a></li>
                     </ul>
                 </li>
             </ul>

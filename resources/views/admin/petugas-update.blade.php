@@ -23,7 +23,7 @@
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div class="form-group">
                         <label>Username</label>
-                        <input type="text" class="form-control" name="username" required/>
+                        <input type="text" class="form-control" name="username" value="{{$petugas->username}}" required/>
                     </div>
                     <div class="form-group">
                         <label>Password</label>
@@ -31,12 +31,12 @@
                     </div>
                     <div class="form-group">
                         <label>Nama Petugas</label>
-                        <input type="text" class="form-control" name="nama" required/>
+                        <input type="text" class="form-control" name="nama" value="{{$petugas->nama}}" required/>
                     </div>
                     <div class="form-group">
                         <label>Role Petugas</label>
                         <select class="form-control" name="role">
-                            <option value="petugas">Petugas</option>
+                            <option value="petugas" selected>Petugas</option>
                         </select>
                     </div>
                     <input type="submit" class="btn btn-primary form-control" value="Submit"/>

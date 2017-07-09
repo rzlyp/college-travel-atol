@@ -13,6 +13,14 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
+            @if (Session::has('success'))
+                   <div class="alert alert-success">
+                           <em> 
+                              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    {!! session('success') !!}
+                           </em>
+                    </div>
+                  @endif
                 <div class="table-responsive">
                     <table id="table-petugas" class="table table-bordered">
                         <thead>
@@ -26,17 +34,32 @@
                             </tr>
                         </thead>
                         <tbody>
+                        @foreach($petugas as $data)
                             <tr>
-                                <td>999</td>
-                                <td>Rizal Yogi P</td>
-                                <td>rzlyp</td>
-                                <td>Petugas</td>
+                                <td>{{$data->id}}</td>
+                                <td>{{$data->nama}}</td>
+                                <td>{{$data->username}}</td>
+                                <td>{{$data->role}}</td>
                                 <td><img class="img-responsive" src="{{asset('img/im-photo-placeholder.png')}}" width="56px"/></td>
                                 <td>
-                                    <a href="{{url('/admin/petugas/add')}}" class="btn btn-primary">Edit</a>
-                                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#modal-hapus">Hapus</a>
+                                    <a href="{{url('/admin/petugas/update')}}/{{$data->id}}" class="btn btn-primary">Edit</a>
+                                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#modal-hapus{{$data->id}}">Hapus</a>
                                 </td>
-                                <div class="modal fade" id="modal-hapus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                               
+                            </tr>
+                         @endforeach   
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@stop
+
+@foreach($petugas as $data)
+ <div class="modal fade" id="modal-hapus{{$data->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -48,7 +71,9 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak, Batalkan</button>
-                                                <button type="button" class="btn btn-primary">Iya, Hapus</button>
+                                                <a href="/admin/petugas/delete/{{$data->id}}" class="btn btn-primary">
+                                                    Iya, Hapus
+                                                </a>
                                             </div>
                                         </div>
                                         <!-- /.modal-content -->
@@ -56,56 +81,4 @@
                                     <!-- /.modal-dialog -->
                                 </div>
                                 <!-- /.modal -->
-                            </tr>
-                            <tr>
-                                <td>999</td>
-                                <td>Rizal Yogi P</td>
-                                <td>rzlyp</td>
-                                <td>Petugas</td>
-                                <td><img class="img-responsive" src="{{asset('img/im-photo-placeholder.png')}}" width="56px"/></td>
-                                <td>
-                                    <a href="{{url('/admin/petugas/add')}}" class="btn btn-primary">Edit</a>
-                                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#modal-hapus">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>999</td>
-                                <td>Rizal Yogi P</td>
-                                <td>rzlyp</td>
-                                <td>Petugas</td>
-                                <td><img class="img-responsive" src="{{asset('img/im-photo-placeholder.png')}}" width="56px"/></td>
-                                <td>
-                                    <a href="{{url('/admin/petugas/add')}}" class="btn btn-primary">Edit</a>
-                                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#modal-hapus">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>999</td>
-                                <td>Rizal Yogi P</td>
-                                <td>rzlyp</td>
-                                <td>Petugas</td>
-                                <td><img class="img-responsive" src="{{asset('img/im-photo-placeholder.png')}}" width="56px"/></td>
-                                <td>
-                                    <a href="{{url('/admin/petugas/add')}}" class="btn btn-primary">Edit</a>
-                                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#modal-hapus">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>999</td>
-                                <td>Rizal Yogi P</td>
-                                <td>rzlyp</td>
-                                <td>Petugas</td>
-                                <td><img class="img-responsive" src="{{asset('img/im-photo-placeholder.png')}}" width="56px"/></td>
-                                <td>
-                                    <a href="{{url('/admin/petugas/add')}}" class="btn btn-primary">Edit</a>
-                                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#modal-hapus">Hapus</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@stop
+@endforeach                                
