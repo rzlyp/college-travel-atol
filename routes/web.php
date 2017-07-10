@@ -31,6 +31,10 @@ Route::get('/admin/transaksi', function () {
     return view('admin/transaksi');
 });
 
+Route::get('/admin/kendaraan',function(){
+    return view('admin/kendaraan');
+});
+
 Route::get('/petugas', function () {
     return view('petugas/tiket');
 });

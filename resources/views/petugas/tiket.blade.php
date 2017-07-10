@@ -18,11 +18,11 @@
                     <p>Data Pembeli</p>
                 </div>
                 <div class="stepwizard-step">
-                    <a href="#step-2" type="button" class="btn btn-light-grey btn-circle" disabled="disabled">2</a>
+                    <a href="#step-2" type="button" class="btn btn-light-grey btn-circle ">2</a>
                     <p>Pilih Tujuan</p>
                 </div>
                 <div class="stepwizard-step">
-                    <a href="#step-3" type="button" class="btn btn-light-grey btn-circle" disabled="disabled">3</a>
+                    <a href="#step-3" type="button" class="btn btn-light-grey btn-circle " >3</a>
                     <p>Review Tiket</p>
                 </div>
             </div>

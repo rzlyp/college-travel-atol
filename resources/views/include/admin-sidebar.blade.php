@@ -27,5 +27,11 @@
                 &nbsp;Data Transaksi
             </a>
         </li>
+        <li>
+            <a href="{{url('/admin/kendaraan')}}">
+                <i class="fa fa-car"></i>
+                &nbsp;Data Kendaraan
+            </a>
+        </li>
     </ul>
 </div>
