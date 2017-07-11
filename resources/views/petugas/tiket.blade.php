@@ -9,25 +9,43 @@
     </div>
 </div>
 
+
 <div class="content">
     <div class="container-fluid">
-        <div class="stepwizard col-md-4" style="margin-bottom: 48px">
-            <div class="stepwizard-row setup-panel">
+        <div class="stepwizard col-md-12" style="margin-bottom: 48px">
+            
+            <div class="stepwizard col-md-offset-3">
+    <div class="stepwizard-row setup-panel">
+      <div class="stepwizard-step">
+        <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+        <p>Step 1</p>
+      </div>
+      <div class="stepwizard-step">
+        <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+        <p>Step 2</p>
+      </div>
+      <div class="stepwizard-step">
+        <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+        <p>Step 3</p>
+      </div>
+    </div>
+  </div>
+            <!--<div class="stepwizard-row setup-panel">
                 <div class="stepwizard-step">
                     <a href="#step-1" type="button" class="btn btn-dark-blue btn-circle">1</a>
                     <p>Data Pembeli</p>
                 </div>
                 <div class="stepwizard-step">
-                    <a href="#step-2" type="button" class="btn btn-light-grey btn-circle ">2</a>
+                    <a href="#step-2" type="button" class="btn btn-light-grey btn-circle" disabled="disabled">2</a>
                     <p>Pilih Tujuan</p>
                 </div>
                 <div class="stepwizard-step">
-                    <a href="#step-3" type="button" class="btn btn-light-grey btn-circle " >3</a>
+                    <a href="#step-3" type="button" class="btn btn-light-grey  btn-circle" disabled="disabled">3</a>
                     <p>Review Tiket</p>
                 </div>
             </div>
         </div>
-
+        -->
         <form role="form" action="" method="post">
             <div class="row setup-content" id="step-1">
                 <div class="col-md-4"></div>
@@ -50,7 +68,7 @@
                         <label>No. HP yang Dapat Dihubungi</label>
                         <input type="number" class="form-control" name="hp" required="required"/>
                     </div>
-                    <button class="btn btn-primary form-control nextBtn" type="button">Berikutnya</button>
+                    <button class="btn btn-primary nextBtn form-control " type="button">Berikutnya</button>
                 </div>
             </div>
             <div class="row setup-content" id="step-2" style="margin-top: 24px;">
@@ -78,7 +96,7 @@
                     <div class="checkbox">
                         <label><input type="checkbox">Penjemputan di alamat yang diisi</label>
                     </div>
-                    <button class="btn btn-primary form-control nextBtn" type="button">Berikutnya</button>
+                    <button class="btn btn-primary nextBtn form-control " type="button">Berikutnya</button>
                 </div>
             </div>
             <div class="row setup-content" id="step-3" style="margin-top: 24px;">
@@ -137,4 +155,49 @@
 
     </div>
 </div>
+
+<!--
+<div class="container">
+	<div class="row form-group">
+        <div class="col-xs-12">
+            <ul class="nav nav-pills nav-justified thumbnail setup-panel">
+                <li class="active"><a href="#step-1">
+                    <h4 class="list-group-item-heading">Step 1</h4>
+                    <p class="list-group-item-text">First step description</p>
+                </a></li>
+                <li class="disabled"><a href="#step-2">
+                    <h4 class="list-group-item-heading">Step 2</h4>
+                    <p class="list-group-item-text">Second step description</p>
+                </a></li>
+                <li class="disabled"><a href="#step-3">
+                    <h4 class="list-group-item-heading">Step 3</h4>
+                    <p class="list-group-item-text">Third step description</p>
+                </a></li>
+            </ul>
+        </div>
+	</div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="col-md-12 well setup-content text-center" id="step-1">
+                <h1> STEP 1</h1>
+                <button id="activate-step-2" class="btn btn-primary btn-lg">Activate Step 2</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="col-md-12 well setup-content" id="step-2">
+                <h1 class="text-center"> STEP 2</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="col-md-12 well setup-content" id="step-3">
+                <h1 class="text-center"> STEP 3</h1>
+            </div>
+        </div>
+    </div>
+</div>
+-->
 @stop
