@@ -24,17 +24,12 @@ Route::group(['prefix' => 'admin','middleware' => 'web'], function () {
 	Route::get('/petugas/update/{id}', 'UsersController@getUpdate');
 	Route::post('/petugas/update/{id}', 'UsersController@postUpdate');
 	Route::get('/petugas/delete/{id}', 'UsersController@delete');
-	Route::get('/transaksi', function () {
-	    return view('admin/transaksi');
-	});
+	Route::get('/transaksi', 'TransaksiController@getTransaksi');
 
 });
 
 Route::group(['prefix' => 'petugas','middleware' => 'web'], function () {
-	Route::get('/', function () {
-	    return view('petugas/tiket');
-	});
-
+	Route::get('/', 'TransaksiController@getDashboard');
 	Route::get('/kendaraan', 'KendaraanController@getKendaraan');
 
 	Route::get('/kendaraan/add', 'KendaraanController@getAdd');
@@ -51,12 +46,11 @@ Route::group(['prefix' => 'petugas','middleware' => 'web'], function () {
 	Route::post('/tujuan/update/{id}', 'TujuanController@postUpdate');
 	Route::post('/tujuan/delete/{id}', 'TujuanController@delete');
 	
-	Route::get('/transaksi', function () {
-	    return view('petugas/transaksi');
-	});
+	Route::get('/transaksi','TransaksiController@getTransaksi');
 
 });
 
-
-
+Route::post('/tiket/save','TransaksiController@postPemesanan');
+Route::get('/harga/{id}','TransaksiController@getPrice');
 Route::get('/logout','Auth\LoginController@logout');
+

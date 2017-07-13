@@ -30,56 +30,18 @@
                             </tr>
                         </thead>
                         <tbody>
+                             @foreach($transaksi as $data)
                             <tr>
-                                <td>999</td>
-                                <td>Evan Gilang R</td>
-                                <td>23/06/2017</td>
-                                <td>Jakarta</td>
-                                <td>1</td>
-                                <td>23/06/2017</td>
-                                <td>16:00 PM</td>
-                                <td>Rp. 150000</td>
+                                <td>{{$data->id_transaksi}}</td>
+                                <td>{{$data->nama_pembeli}}</td>
+                                <td>{{$data->created_at}}</td>
+                                <td>{{$data->nama_tujuan}}</td>
+                                <td>{{$data->jumlah_tiket}}</td>
+                                <td>{{$data->tgl_keberangkatan}}</td>
+                                <td>{{$data->jam_keberangkatan}}</td>
+                                <td>{{$data->total_harga}}</td>
                             </tr>
-                            <tr>
-                                <td>999</td>
-                                <td>Evan Gilang R</td>
-                                <td>23/06/2017</td>
-                                <td>Jakarta</td>
-                                <td>1</td>
-                                <td>23/06/2017</td>
-                                <td>16:00 PM</td>
-                                <td>Rp. 150000</td>
-                            </tr>
-                            <tr>
-                                <td>999</td>
-                                <td>Evan Gilang R</td>
-                                <td>23/06/2017</td>
-                                <td>Jakarta</td>
-                                <td>1</td>
-                                <td>23/06/2017</td>
-                                <td>16:00 PM</td>
-                                <td>Rp. 150000</td>
-                            </tr>
-                            <tr>
-                                <td>999</td>
-                                <td>Evan Gilang R</td>
-                                <td>23/06/2017</td>
-                                <td>Jakarta</td>
-                                <td>1</td>
-                                <td>23/06/2017</td>
-                                <td>16:00 PM</td>
-                                <td>Rp. 150000</td>
-                            </tr>
-                            <tr>
-                                <td>999</td>
-                                <td>Evan Gilang R</td>
-                                <td>23/06/2017</td>
-                                <td>Jakarta</td>
-                                <td>1</td>
-                                <td>23/06/2017</td>
-                                <td>16:00 PM</td>
-                                <td>Rp. 150000</td>
-                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>

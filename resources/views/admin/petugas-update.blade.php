@@ -14,12 +14,12 @@
         <div class="row" style="padding-bottom: 36px;">
             <div class="col-md-4"></div>
             <div class="col-md-4">
+            <form method="post" style="margin-top: 24px" enctype="multipart/form-data">
                 <center>
-                    <img class="img-responsive" src="{{asset('img/im-photo-placeholder.png')}}" width="96x" />
+                    <img class="img-responsive" id="preview" src="{{asset('img')}}/{{$petugas->foto}}" width="96x" />
                     <br/>
-                    <a href="#" class="btn btn-default">Pilih Foto</a>
+                    <input type="file" name="foto" class="btn btn-default" onChange="readURL(this)">
                 </center>
-                <form method="post" style="margin-top: 24px">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div class="form-group">
                         <label>Username</label>
@@ -46,3 +46,21 @@
     </div>
 </div>
 @stop
+
+<script type="text/javascript">
+    
+     function readURL(input) {
+
+
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#preview').attr('src', e.target.result);
+
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+</script>

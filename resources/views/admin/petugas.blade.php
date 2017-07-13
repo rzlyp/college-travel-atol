@@ -40,7 +40,7 @@
                                 <td>{{$data->nama}}</td>
                                 <td>{{$data->username}}</td>
                                 <td>{{$data->role}}</td>
-                                <td><img class="img-responsive" src="{{asset('img/im-photo-placeholder.png')}}" width="56px"/></td>
+                                <td><img class="img-responsive" src="{{asset('img')}}/{{$data->foto}}" width="56px"/></td>
                                 <td>
                                     <a href="{{url('/admin/petugas/update')}}/{{$data->id}}" class="btn btn-primary">Edit</a>
                                     <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#modal-hapus{{$data->id}}">Hapus</a>

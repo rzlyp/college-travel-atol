@@ -11,13 +11,23 @@ class UsersController extends Controller
 		 return view('admin/petugas-add');
 	}
     function postPetugas(Request $request){
+        if($request->file('foto') == ''){
+                    $fileName = 'im-photo-placeholder.png';
+
+                }else{
+
+                        $destinationPath = 'img'; // upload path
+                        $extension = $request->file('foto')->getClientOriginalExtension(); // getting image extension
+                        $fileName = str_slug($request->input('nama'), "-").'.'.$extension; // renameing image
+                        $request->file('foto')->move($destinationPath, $fileName);
+                }
     	$data = [
     		'username' => $request->input('username'),
     		'password' => bcrypt($request->input('password')),
     		'nama' => $request->input('nama'),
     		'role' => $request->input('role'),
     		'remember_token' => '',
-    		'foto' => ''
+    		'foto' => $fileName
     	];
 
     	$create = User::create($data);
@@ -37,12 +47,23 @@ class UsersController extends Controller
         return view('admin/petugas-update',['petugas'=>$petugas]);
     }
     public function postUpdate($id, Request $request){
+        $find = User::find($id)->first();
+        if($request->file('foto') == ''){
+                    $fileName = $find->foto;
+
+                }else{
+                        File::delete('img/' . $find->foto);
+                        $destinationPath = 'img'; // upload path
+                        $extension = $request->file('foto')->getClientOriginalExtension(); // getting image extension
+                        $fileName = str_slug($request->input('nama'), "-").'.'.$extension; // renameing image
+                        $request->file('foto')->move($destinationPath, $fileName);
+         }
     	$data = [
     		'username' => $request->input('username'),
     		'password' => bcrypt($request->input('password')),
     		'nama' => $request->input('nama'),
     		'role' => $request->input('role'),
-    		'foto' => ''
+    		'foto' => $fileName
     	];
     	$edit = User::find($id);
     	$edit->update($data);
