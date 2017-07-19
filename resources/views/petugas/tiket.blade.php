@@ -48,7 +48,7 @@
             </div>
         </div>
         -->
-        
+            
             <div class="row setup-content" id="step-1">
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
@@ -163,10 +163,11 @@
                             </tbody>
                         </table>
                     </div>
+                    
                     <button  class="btn btn-primary form-control" id="cetak" onclick="cetak()">Selesai dan Cetak Tiket</button>
                 </div>
             </div>
-      
+     
 
     </div>
 </div>
@@ -258,11 +259,12 @@
                         type: "POST",
                         data : data,
                         success: function(data, textStatus, jqXHR) {
-                            $('#cetak').text('Berhasil..');
+                          
                             printOut();
-                            $('#cetak').text('Mohon tunggu..');
-                            location.reload();
-                        },
+                            //document.location.href = "{{url('/petugas')}}";
+                            resetAllValues();
+                            swal("Berhasil", "Transaksi Berhasil Dilakukan", "success");
+                        },    
                         error: function (jqXHR, textStatus, errorThrown){
                      
                         }
@@ -273,7 +275,14 @@
               
               
         }
-        
+        function resetAllValues() {
+            $('.content').find('input[type=text]').val('');
+            $('.content').find('input[type=date]').val('');
+            $('.content').find('input[type=time]').val('');
+            $('.content').find('input[type=number]').val('');
+            $('.content').find('select').val('');
+            $('.content').find('textarea').val('');
+        }
         function printOut(){
             var divToPrint= document.getElementById('tickets');
             var newWin=window.open('','Print-Window','height=700,width=900');

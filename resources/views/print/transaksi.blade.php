@@ -1,22 +1,11 @@
-@extends('petugas-dashboard') 
-@section('content')
-<div class="header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <h3 class="title">Data Transaksi</h3>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <a class="btn btn-primary" href="{{url('/print')}}" target="_blank"><i class="fa fa-print button-icon"></i>Cetak Transaksi</a>
-                <div class="table-responsive" style="margin-top: 24px;">
-                    <table id="table-transaksi" class="table table-bordered">
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Data Transaksi</title>
+</head>
+<body>
+	<center>
+	 <table border="1">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -44,9 +33,6 @@
                         @endforeach
                         </tbody>
                     </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@stop
+     	</center>
+</body>
+</html>

@@ -9,6 +9,7 @@ use App\Transaksi;
 use App\Pembeli;
 use Session;
 use Carbon\Carbon;
+use PDF;
 
 class TransaksiController extends Controller
 {
@@ -51,11 +52,20 @@ class TransaksiController extends Controller
     public function getTransaksi(){
         $transaksi = Transaksi::join('pembeli','pembeli.id_pembeli','transaksi.id_pembeli')
             ->join('tujuan','tujuan.id_tujuan','transaksi.id_tujuan')
+            ->orderBy('transaksi.created_at','DESC')
             ->get();
         if(Auth::user()->role === 'admin'){
             return view('admin/transaksi')->with('transaksi',$transaksi);
         }
         return view('petugas/transaksi')->with('transaksi',$transaksi);
+    }
+    public function toPDF(){
+        $transaksi = Transaksi::join('pembeli','pembeli.id_pembeli','transaksi.id_pembeli')
+            ->join('tujuan','tujuan.id_tujuan','transaksi.id_tujuan')
+            ->orderBy('transaksi.created_at','DESC')
+            ->get();
+        $pdf = PDF::loadView('print.transaksi', array('transaksi' => $transaksi));
+        return $pdf->download('transaksi.pdf');
     }
 
 }

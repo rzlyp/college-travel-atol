@@ -50,6 +50,10 @@ Route::group(['prefix' => 'petugas','middleware' => 'web'], function () {
 
 });
 
+Route::get('/redirect', function(){
+	return redirect('/petugas');
+});
+Route::get('/print','TransaksiController@toPDF');
 Route::post('/tiket/save','TransaksiController@postPemesanan');
 Route::get('/harga/{id}','TransaksiController@getPrice');
 Route::get('/logout','Auth\LoginController@logout');

@@ -20,6 +20,7 @@ class AdminController extends Controller
     	$transaksi = Transaksi::join('pembeli','pembeli.id_pembeli','transaksi.id_pembeli')
             ->join('tujuan','tujuan.id_tujuan','transaksi.id_tujuan')
             ->whereDate('transaksi.created_at',$today->toDateString())
+            ->orderBy('transaksi.created_at','DESC')
             ->get();
     	return view('admin/index',['kendaraan' => $kendaraan, 'petugas' => $petugas, 'transaksi' => $transaksi]);
     }
