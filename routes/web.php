@@ -26,6 +26,9 @@ Route::group(['prefix' => 'admin','middleware' => 'web'], function () {
 	Route::get('/petugas/delete/{id}', 'UsersController@delete');
 	Route::get('/transaksi', 'TransaksiController@getTransaksi');
 
+	
+	Route::get('/kendaraan', 'KendaraanController@getKendaraan');
+
 });
 
 Route::group(['prefix' => 'petugas','middleware' => 'web'], function () {
