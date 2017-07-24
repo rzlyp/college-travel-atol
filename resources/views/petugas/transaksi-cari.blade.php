@@ -1,8 +1,5 @@
-@if(Auth::user()->role === 'admin')
-@extends('admin-dashboard') @section('content')
-@else
-@@extends('petugas-dashboard') @section('content')
-@endif
+@extends('petugas-dashboard') @section('content')
+
 <div class="header">
     <div class="container-fluid">
         <div class="row">
