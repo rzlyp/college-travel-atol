@@ -172,7 +172,6 @@
     </div>
 </div>
 
-
 @stop
 <script type="text/javascript">
     function getNama(data){
@@ -223,9 +222,8 @@
        //      $("#tickets").print( options );
        // }
        function cetak() {
-              $('#cetak').text('Menyimpan...');
               var status = 0;
-              
+                $('#cetak').val('Menyimpan...')
                 var id = $('#f_tujuan').val();
                 $.getJSON( "{{url('/harga')}}/"+id, function( docs ) {
                    console.log(docs);
@@ -263,6 +261,7 @@
                             printOut();
                             //document.location.href = "{{url('/petugas')}}";
                             resetAllValues();
+                            $('#cetak').val('Selesai dan Cetak Tiket')
                             swal("Berhasil", "Transaksi Berhasil Dilakukan", "success");
                         },    
                         error: function (jqXHR, textStatus, errorThrown){
@@ -282,7 +281,17 @@
             $('.content').find('input[type=number]').val('');
             $('.content').find('select').val('');
             $('.content').find('textarea').val('');
-        }
+            $('#nama_pembeli').text('');
+            $('#jml_tiket').text('');
+            $('#alamat').text('');
+            $('#waktu').text('');
+            $('#tanggal').text('');
+            $('#jemput').text('');
+            $('#diskon').text('');
+            $('#harga').text('');
+            $('#total').text('');
+    }
+        
         function printOut(){
             var divToPrint= document.getElementById('tickets');
             var newWin=window.open('','Print-Window','height=700,width=900');

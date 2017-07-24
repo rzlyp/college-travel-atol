@@ -42,6 +42,20 @@ class UsersController extends Controller
 
     	return view('admin/petugas',['petugas'=> $petugas]);
     }
+    function getCari(){
+        return view('/admin/cari');
+    }
+     function postCari(Request $request){
+        $cat = $request->input('cat');
+
+        if($cat === 'id'){
+            $petugas = User::where('id', $request->input('cari'))->get();
+        }else{
+            $petugas = User::where('nama','like','%'.$request->input('cari').'%')->get();
+        }
+
+        return view('/admin/petugas')->with('petugas', $petugas);
+    }
      public function getUpdate($id){
         $petugas = User::where('id',$id)->first();
         return view('admin/petugas-update',['petugas'=>$petugas]);

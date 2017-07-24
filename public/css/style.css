@@ -63,6 +63,13 @@ h4 {
     border-radius: 0px;
     font-weight: 700;
 }
+.btn-primary {
+    background-color: #0975E1;
+    border: none;
+    box-shadow: 1px 1px 8px #BDBDBD;
+    border-radius: 0px;
+    font-weight: 700;
+}
 hr {
     position: absolute;
 }

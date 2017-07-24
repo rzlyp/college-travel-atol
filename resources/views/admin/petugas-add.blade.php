@@ -19,6 +19,7 @@
                     <img class="img-responsive" id="preview" src="{{asset('img/im-photo-placeholder.png')}}" width="96x" />
                     <br/>
                     <input type="file" name="foto" class="btn btn-default" onChange="readURL(this)">
+                    <br>
                 </center>
                 
                     <input type="hidden" name="_token" value="{{csrf_token()}}">

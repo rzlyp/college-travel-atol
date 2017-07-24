@@ -27,16 +27,59 @@ class KendaraanController extends Controller
 	    	$create = Kendaraan::create($data);
 	    	if($create){
 	    		Session::flash('success','Kendaraan berhasil ditambahkan.');
-	    		return redirect('/petugas/kendaraan/add');
+	    		return redirect('/petugas/kendaraan');
 	    	}
     	}
     	
     }
+    function getAddAdmin(){
+         return view('admin/kendaraan-add');
+    }
+    function postAddAdmin(Request $request){
+        if(Auth::check()){
+            $user = Auth::user()->id;
+            $data = [
+                'nama_kendaraan' => $request->input('nama_kendaraan'),
+                'kapasitas_kendaraan' => $request->input('kapasitas'),
+                'id_users' => $user
+            ];
 
+            $create = Kendaraan::create($data);
+            if($create){
+                Session::flash('success','Kendaraan berhasil ditambahkan.');
+                return redirect('/admin/kendaraan');
+            }
+        }
+        
+    }
     function getKendaraan(){
     	$kendaraan = Kendaraan::All();
 
     	return view('petugas/kendaraan',['kendaraan'=> $kendaraan]);
+    }
+     function getKendaraanAdmin(){
+        $kendaraan = Kendaraan::All();
+
+        return view('petugas/kendaraan',['kendaraan'=> $kendaraan]);
+    }
+     function getCari(){
+        if(Auth::user()->role === 'petugas'){
+            return view('/petugas/kendaraan-cari');
+        }
+        return view('/admin/kendaraan-cari');
+    }
+     function postCari(Request $request){
+        $cat = $request->input('cat');
+
+        if($cat === 'id'){
+            $kendaraan = Kendaraan::where('id_kendaraan', $request->input('cari'))->get();
+        }else{
+            $kendaraan = Kendaraan::where('nama_kendaraan','like','%'.$request->input('cari').'%')->get();
+        }
+        if(Auth::user()->role === 'admin'){
+            return view('/admin/kendaraan')->with('kendaraan', $kendaraan);
+        }
+        return view('/petugas/kendaraan')->with('kendaraan', $kendaraan);
     }
      public function getUpdate($id){
         $kendaraan = Kendaraan::where('id_kendaraan',$id)->first();

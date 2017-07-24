@@ -68,7 +68,21 @@ class TujuanController extends Controller
         $delete->delete();
         if($delete){
             Session::flash('success','Tujuan berhasil di hapus.');
-            return redirect('/petugas/kendaraan');
+            return redirect('/petugas/tujuan');
         }
+    }
+    function getCari(){
+        return view('/petugas/tujuan-cari');
+    }
+     function postCari(Request $request){
+        $cat = $request->input('cat');
+
+        if($cat === 'id'){
+            $tujuan = Tujuan::where('id_tujuan', $request->input('cari'))->get();
+        }else{
+            $tujuan = Tujuan::where('nama_tujuan','like','%'.$request->input('cari').'%')->get();
+        }
+       
+        return view('/petugas/tujuan')->with('tujuan', $tujuan);
     }
 }

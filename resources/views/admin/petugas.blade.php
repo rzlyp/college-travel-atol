@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h3 class="title">Data Transaksi</h3>
+                <h3 class="title">Data Petugas</h3>
             </div>
         </div>
     </div>
@@ -13,14 +13,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-            @if (Session::has('success'))
-                   <div class="alert alert-success">
-                           <em> 
-                              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    {!! session('success') !!}
-                           </em>
-                    </div>
-                  @endif
+           
                 <div class="table-responsive">
                     <table id="table-petugas" class="table table-bordered">
                         <thead>

@@ -1,4 +1,6 @@
-@extends('petugas-dashboard') 
+
+@extends('petugas-dashboard') @section('content')
+
 @section('content')
 <div class="header">
     <div class="container-fluid">

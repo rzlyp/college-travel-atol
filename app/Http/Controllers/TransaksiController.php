@@ -59,6 +59,39 @@ class TransaksiController extends Controller
         }
         return view('petugas/transaksi')->with('transaksi',$transaksi);
     }
+     function getCari(){
+        if(Auth::user()->role === 'petugas'){
+            return view('/petugas/transaksi-cari');
+        }
+        return view('/admin/transaksi-cari');
+    }
+     function postCari(Request $request){
+        $cat = $request->input('cat');
+
+        if($cat === 'id'){
+            $transaksi = Transaksi::join('pembeli','pembeli.id_pembeli','transaksi.id_pembeli')
+                        ->join('tujuan','tujuan.id_tujuan','transaksi.id_tujuan')
+                        ->where('pembeli.nama_pembeli', $request->input('cari'))
+                        ->orderBy('transaksi.created_at','DESC')
+                        ->get();
+        }else if($cat === 'nama'){
+            $transaksi = Transaksi::join('pembeli','pembeli.id_pembeli','transaksi.id_pembeli')
+                        ->join('tujuan','tujuan.id_tujuan','transaksi.id_tujuan')
+                        ->where('pembeli.nama_pembeli','LIKE', '%'.$request->input('cari').'%')
+                        ->orderBy('transaksi.created_at','DESC')
+                        ->get();
+        }else{
+            $transaksi = Transaksi::join('pembeli','pembeli.id_pembeli','transaksi.id_pembeli')
+                        ->join('tujuan','tujuan.id_tujuan','transaksi.id_tujuan')
+                        ->whereDate('transaksi.created_at', $request->input('cari'))
+                        ->orderBy('transaksi.created_at','DESC')
+                        ->get();
+        }
+        if(Auth::user()->role === 'admin'){
+            return view('/admin/transaksi')->with('transaksi', $transaksi);
+        }
+        return view('/petugas/transaksi')->with('transaksi', $transaksi);
+    }
     public function toPDF(){
         $transaksi = Transaksi::join('pembeli','pembeli.id_pembeli','transaksi.id_pembeli')
             ->join('tujuan','tujuan.id_tujuan','transaksi.id_tujuan')
