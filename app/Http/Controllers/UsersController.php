@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Session;
+use File;
+
 class UsersController extends Controller
 {	
 	function getAddPetugas(){
